@@ -1,0 +1,12 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/Orion-Travelr/client
+	branch = main
+[submodule "services/api-gateway"]
+	path = services/api-gateway
+	url = https://github.com/Orion-Travelr/api-gateway
+	branch = main
+[submodule "services/universe"]
+	path = services/universe
+	url = https://github.com/Orion-Travelr/universe-service
+	branch = main
