@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  gateway:
+    hostname: gateway
+    container_name: gateway
+    build: ./services/api-gateway
+    working_dir: /var/www
+    ports:
+      - 3000:3000
+    depends_on:
+      - universe
+    networks:
+      - frontend
+      - backend
+
+  client:
+    hostname: client
+    container_name: client
+    build: ./client/docker
+    working_dir: /var/www
+    volumes:
+      - ./client/dist:/var/www
+    ports:
+      - 8080:80
+    depends_on:
+      - gateway
+    networks:
+      - frontend
+
+  universe:
+    hostname: universe
+    container_name: universe
+    build: ./services/universe
+    networks:
+      - backend
+    ports:
+      - 3001:3001
+
+networks:
+  backend:
+  frontend:
