@@ -18,12 +18,10 @@ services:
   client:
     hostname: client
     container_name: client
-    build: ./client/docker
+    build: ./client
     working_dir: /var/www
-    volumes:
-      - ./client/dist:/var/www
     ports:
-      - 8080:80
+      - 80:80
     depends_on:
       - gateway
     networks:
