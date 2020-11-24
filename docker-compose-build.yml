@@ -5,7 +5,8 @@ services:
   gateway:
     hostname: gateway
     container_name: gateway
-    image: oriontravelr/api-gateway:1.0
+    build: ./services/api-gateway
+    working_dir: /var/www
     ports:
       - 3000:3000
     depends_on:
@@ -17,7 +18,8 @@ services:
   client:
     hostname: client
     container_name: client
-    image: oriontravelr/client:1.0
+    build: ./client
+    working_dir: /var/www
     ports:
       - 8080:80
     depends_on:
@@ -28,7 +30,7 @@ services:
   universe:
     hostname: universe
     container_name: universe
-    image: oriontravelr/universe:1.0
+    build: ./services/universe
     networks:
       - backend
     ports:
