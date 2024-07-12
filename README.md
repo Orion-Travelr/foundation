@@ -12,3 +12,23 @@ Container Services:
 *Network Setup*
 
 Client -> API Gateway <-> Platform
+
+**Technologies**
+
+Client & API Gateway:
+
+- Docker
+- Kubernetes
+- Node.js
+- Hapi.js Framework
+- SQLITE (using MikroORM)
+- Redux
+- React - Frontend UI
+- Typescript
+- MikroORM
+
+Backend: 
+
+- LAMP (Ubuntu, Apache2, MariaDB, PHP 7.1)
+- Laravel 5.6 MVC Framework
+- Vue/x - Frontend UI
